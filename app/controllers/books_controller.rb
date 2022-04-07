@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   
   def create
     list = List.new(list_params)
-    list.save
+    list.savenew
     redirect_to '/top'
   end
   
