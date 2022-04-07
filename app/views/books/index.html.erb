@@ -1,0 +1,107 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Books</title>
+</head>
+
+<body>
+  <p id="notice"></p>
+  <h1>Books</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>リーダブルコード</td>
+        <td>より良いコードを書くためのシンプルで実践的なテクニック</td>
+        <td><a class="show_63139" href="/books/63139">Show</a></td>
+        <td><a class="edit_63139" href="/books/63139/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_63139" rel="nofollow" data-method="delete" href="/books/63139">Destroy</a></td>
+      </tr>
+      <tr>
+        <td>トラブル知らずのシステム設計</td>
+        <td>システム設計の要点を図解で説明してくれます</td>
+        <td><a class="show_63133" href="/books/63133">Show</a></td>
+        <td><a class="edit_63133" href="/books/63133/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_63133" rel="nofollow" data-method="delete"
+            href="/books/63133">Destroy</a></td>
+      </tr>
+      <tr>
+        <td>たのしいRuby</td>
+        <td>Rubyの入門におすすめです</td>
+        <td><a class="show_63134" href="/books/63134">Show</a></td>
+        <td><a class="edit_63134" href="/books/63134/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_63134" rel="nofollow" data-method="delete"
+            href="/books/63134">Destroy</a></td>
+      </tr>
+      <tr>
+        <td>入門Git</td>
+        <td>gitについての基本操作から内部構造まで解説してくれます</td>
+        <td><a class="show_63135" href="/books/63135">Show</a></td>
+        <td><a class="edit_63135" href="/books/63135/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_63135" rel="nofollow" data-method="delete"
+            href="/books/63135">Destroy</a></td>
+      </tr>
+      <tr>
+        <td>アルゴリズム図鑑</td>
+        <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
+        <td><a class="show_63136" href="/books/63136">Show</a></td>
+        <td><a class="edit_63136" href="/books/63136/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_63136" rel="nofollow" data-method="delete"
+            href="/books/63136">Destroy</a></td>
+      </tr>
+      <tr>
+        <td>達人プログラマー</td>
+        <td>プログラマ入門者は必読！</td>
+        <td><a class="show_63137" href="/books/63137">Show</a></td>
+        <td><a class="edit_63137" href="/books/63137/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_63137" rel="nofollow" data-method="delete"
+            href="/books/63137">Destroy</a></td>
+      </tr>
+      <tr>
+        <td>データベース実践入門</td>
+        <td>効率的なSQL文を教えてくれます</td>
+        <td><a class="show_63138" href="/books/63138">Show</a></td>
+        <td><a class="edit_63138" href="/books/63138/edit">Edit</a></td>
+        <td><a data-confirm="Are you sure?" class="destroy_63138" rel="nofollow" data-method="delete"
+            href="/books/63138">Destroy</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h2>New book</h2>
+  <form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8"
+      type="hidden" value="✓"><input type="hidden" name="authenticity_token"
+      value="WoQIGEGdF8H54H6WMy1O0u193JpILGyk3iCQQwXXfReHhV3v6LmnqoOwuj9NJJG+mmZm4K2RSuYifMrpfZgT6A==">
+
+    <div class="field">
+      <label for="book_title">Title</label>
+      <input class="book_title" type="text" name="book[title]" id="book_title">
+    </div>
+
+    <div class="field">
+      <label for="book_body">Body</label>
+      <textarea class="book_body" name="book[body]" id="book_body"></textarea>
+    </div>
+
+    <div class="actions">
+      <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">
+    </div>
+  </form>
+
+
+</body>
+
+</html>
