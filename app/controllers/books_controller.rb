@@ -6,7 +6,7 @@ class BooksController < ApplicationController
   def create
     list = List.new(list_params)
     list.save
-    redirect_to 'list_path(list.id)'
+    redirect_to book_path(list.id)
   end
   
   def index
@@ -14,7 +14,7 @@ class BooksController < ApplicationController
   end
   
   def show
-    @list = List.find(params[])
+    @list = List.find(params[:id])
   end
   
   def edit
