@@ -11,4 +11,4 @@
 
 <%= link_to "show", book_path(@list) %>
 <%= "|" %> 
-<%= "destroy" %>
+<<%= link_to "destroy", destroy_book_path(list.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
