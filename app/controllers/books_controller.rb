@@ -4,9 +4,16 @@ class BooksController < ApplicationController
   end
   
   def create
-    list = List.new(list_params)
-    list.save
-    redirect_to book_path(list.id)
+   @list = List.new(list_params)
+   if @list.save
+     redirect_to book_path(@list.id)
+   else
+     render:new
+   end
+   
+   if @list.save
+     flash[:notice] = "Book was successfully created."
+   end
   end
   
   def index
@@ -22,6 +29,7 @@ class BooksController < ApplicationController
   end
   
   def update
+    flash[:notice] = "succesfully"
     list = List.find(params[:id])
     list.update(list_params)
     redirect_to book_path(list.id)  

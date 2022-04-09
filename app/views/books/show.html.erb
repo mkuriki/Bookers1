@@ -1,9 +1,11 @@
+<p id = "notice"><%= flash[:notice] %></p>
+
 <h2>Title</h2>
 <p><%= @list.title %></p>
 
 <h2>Body</h2>
 <p><%= @list.body %></p>
 
-<%= link_to "edit", edit_book_path(@list) %>
+<%= link_to "Edit", edit_book_path(@list) %>
 <%= "|" %> 
-<%= link_to "destroy", destroy_book_path(list.id), %>
+<%= link_to "Back", books_path(@lists) %>
