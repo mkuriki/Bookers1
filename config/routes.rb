@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete 'books/:id' => 'books#destroy', as: 'destroy_book'
   
   resources :books,:homes
+  
 
   root to:'homes#top'
 

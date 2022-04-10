@@ -1,49 +1,54 @@
 class BooksController < ApplicationController
-  def new
-   @list = List.new
-  end
-  
+
   def create
-   @list = List.new(list_params)
-   if @list.save
-     redirect_to book_path(@list.id)
+   @book = Book.new(book_params)
+   if @book.save
+      redirect_to book_path(@book.id)
    else
-     render:new
+      @books = Book.all
+      render :index
    end
    
-   if @list.save
+   if @book.save
      flash[:notice] = "Book was successfully created."
    end
   end
   
   def index
-    @lists = List.all
+    @book = Book.new
+    @books = Book.all
   end
   
   def show
-    @list = List.find(params[:id])
+    @book = Book.find(params[:id])
   end
   
   def edit
-    @list = List.find(params[:id])
+    @book = Book.find(params[:id])
   end
   
   def update
-    flash[:notice] = "succesfully"
-    list = List.find(params[:id])
-    list.update(list_params)
-    redirect_to book_path(list.id)  
+    @book = Book.find(params[:id])
+    @book.update(book_params)
+    
+   if @book.save
+     redirect_to book_path(@book.id)
+     flash[:notice] = "Book was successfully updated."
+   else
+     render :edit
+   end
+   
   end
   
   def destroy
-    list = List.find(params[:id])
-    list.destroy
+    book = Book.find(params[:id])
+    book.destroy
     redirect_to '/books'
   end
   
   private
   # ストロングパラメータ
-  def list_params
-    params.require(:list).permit(:title, :body)
+  def book_params
+    params.require(:book).permit(:title, :body)
   end
 end
